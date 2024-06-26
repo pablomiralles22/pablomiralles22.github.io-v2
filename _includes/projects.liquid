@@ -1,5 +1,5 @@
 <div class="col">
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+  <a {% unless project.content == blank %} href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}"{% endunless %}>
     <div class="card h-100 hoverable">
       {% if project.img %}
         {%
@@ -29,6 +29,13 @@
             </div>
           {% endif %}
         </div>
+        {%- for item in project.links -%}
+        <div class="project-link mr-2">
+          <div class="link" data-toggle="tooltip" title="Code Repository">
+            <a href="{{ item.link }}" rel="noopener noreferrer" target="_blank">{{ item.text }}</a>
+          </div>
+        </div>
+        {%- endfor %}
       </div>
     </div>
   </a>

@@ -1,14 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
-
-repo_description_lines_max: 2
+  - pablomiralles22
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - pablomiralles22/dotfiles
+  - pablomiralles22/deiso-xv6
+  - pablomiralles22/af-lecture-notes
+  - pablomiralles22/numerical-ode
