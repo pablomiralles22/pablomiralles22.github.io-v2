@@ -22,5 +22,5 @@ are currently looking at my personal website. Here you will find my
 personal and academic [projects](/projects/) related to my fields of interests.
 
 My hope for this website is to upload content related to my fields of
-interested, both technical (mathematics, AI, Deep Learning, Data Science,
+intereste, both technical (mathematics, AI, Deep Learning, Data Science,
 programming, HPC,...) and non-technical (philosophy, psychology or literature).
