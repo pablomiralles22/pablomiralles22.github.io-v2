@@ -38,6 +38,27 @@ body.sticky-bottom-footer {
   }
 }
 
+body div.post {
+  h1 {
+    font-weight: bold;
+  }
+
+  article.post-content {
+    h2 {
+      border-bottom: 1px solid var(--global-hover-color);
+      padding: 0.5em 0;
+      margin: 1em 0;
+      font-weight: bold;
+    }
+  
+    h3 {
+      margin: 0.5em 0;
+      font-weight: bolder;
+    }
+  }
+}
+
+
 // TODO: redefine content layout.
 
 /******************************************************************************
