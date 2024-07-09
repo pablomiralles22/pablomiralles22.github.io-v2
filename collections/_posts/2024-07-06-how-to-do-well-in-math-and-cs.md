@@ -30,9 +30,12 @@ your schedule, as building the stamina to study for hours without distractions
 takes time. The second is minimizing the time in very stimulant activities such
 as social media.
 
-The post has two main sections: the general principles that guided my studying
-process and projects, helping me prioritize what's important, and a general
-overview of a full semester for me.
+The post has three sections. In the first one, I talk about the main general
+principles that guided my studying process and projects, helping me prioritize
+what's important. The second one describes a general overview of a full
+semester for me. Finally, I discuss some other topics that typically come out
+when talking about studying, but that do not make, in my opinion, a big
+difference.
 
 ## General principles and techniques
 
@@ -167,9 +170,55 @@ Exam days were off days, I tried not to study before the exam. I would just
 get more nervous, and I don't think it pays off a lot if you studied before
 this point.
 
+## Other topics
+
+In this section I will go over some disconnected topics that are often
+discussed in the online study community. I leave them here because most of them
+aren't really critical, and doing what works best for you or makes your life
+more enjoyable is probably the right choice.
+
+#### Note taking
+
+Many people take notes during classes. Of course, if your professor doesn't
+provide any material, you are basically forced to. In other cases, I prefer not
+taking notes and focusing on understanding everything. If taking notes helps
+you keep your focus that's okay, but I wouldn't sacrifice understanding what is
+being said to take my own notes. If you are able to keep up with the class and
+still take notes, you could try creating a concept map during class, trying to
+connect ideas and getting some higher order thinking done.
+
+Cleaning up notes is more often than not very useless. It is very passive. It
+might make people feel productive but it is not forcing them to think about the
+topic. Summarizing can be a bit more active, since you need to evaluate and
+rank the information in terms of importance. If you can add mindmapping to
+connect ideas and get a high level picture of the topics it's probably even
+better. In any case, I think it is better to spend your time solving problems,
+and would only do these if I have spare time.
+
+#### Study block sizes
+
+How long do you study and rest for will depend on your preferences. I like
+using the Pomodoro method (with 25 minute sessions and 5 minute rests) for
+activities that are not very engaging, such us studying theory, or when I am
+having trouble focusing. For problem solving or coding I like going with the
+flow and taking rests whenever I feel very tired, typically every hour and a
+half or two hours.
+
+#### Scheduling study sessions
+
+When scheduling my sessions and activities, I try to get the least engaging or
+most boring things out of the way first, when I am not tired. Even though these
+things are often less important, I have no trouble keeping my focus for long
+hours on engaging activities like problem solving or coding. I also try to
+keep the study time (without breaks) below 7-8 hours each day, and I will
+almost never study after dinner. That's very personal, some people might prefer
+studying fewer days a week and more hours, or studying during the night.
+
+
 ## Conclusions
 
 That's it for my studying advice. Not many novel ideas, just focusing on what's
 important and allocating a lot of time. Of course, you will need some balance
 to make studying sustainable. I did all of this while going to the gym and
-spending time with friends regularly.
+spending time with friends regularly. I wish you good luck with your studies
+and a good time during your university years :)
