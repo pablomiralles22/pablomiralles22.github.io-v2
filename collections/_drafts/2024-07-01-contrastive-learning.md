@@ -14,7 +14,7 @@ authors:
 bibliography: 2024_contrastive-learning.bib
 title: An introduction to contrastive techniques for representation learning
 description: A look at some of the basic research on contrastive learning
-date: 2024-06-26
+date: 2024-07-16
 
 tags:
 - deep learning
@@ -41,9 +41,12 @@ Earlier this year I had to write a technical report on the topic of contrastive
 learning
 ([link](/assets/pdf/projects/contrastive-learning-report/report.pdf)).
 This post is an effort to create something more digestible and adequate for
-reading. The goal is to give an introduction to representation learning, as well
-as taking a look at the techniques labelled as "contrastive" to learn those
-representations.
+reading. The goal is to give an introduction to representation learning. This
+is done in the first section, also discussing its advantages and other related
+topics such as self-supervised or transfer learning. The second section is
+dedicated to the techniques for representations learning labelled as
+"contrastive". We will go over some of the most important topics: loss
+functions, data generation techniques, negative examples and applications.
 
 ## Representations, transfer learning and self-supervised learning
 
@@ -51,56 +54,56 @@ Consider some neural network such as the following:
 
 {% include figure.liquid path="assets/img/posts/2024_contrastive-learning/nn_repr.pdf" class="img-fluid rounded z-depth-1" %}
 
-Neural networks are the composition of transformations, where each intermediate
-layer outputs a function of the input coming from the previous one. The output
-of each intermediate layer is a new view or **representation** of the input
-data. These representations are nothing but vector, holding features or
-characteristics of the input. Of course, neural networks are not interpretable,
-and these vectors of values do not necessarily hold any meaning for us.
-The network learns to progressively transform the data into a set of features
-that is useful to perform the task we are training it for. For example, if we
-are training for image classification of animals, the network might learn a
-representation with the number of legs, the shape of the eyes, the color...
+Neural networks are the composition of transformations, where every
+intermediate layer applies a parameterized function to the input coming from
+the previous one. The output of each intermediate layer is a new view or
+**representation** of the input data. These representations are nothing but
+vectors, where the values are features or characteristics of the input. Of
+course, neural networks are not interpretable, and these vectors do not
+necessarily hold any meaning for us. The network learns to progressively
+transform the data into a set of features that is useful to perform the task we
+are training it for. For example, if we are training for image classification
+of animals, the network might learn a representation with the number of legs,
+the shape of the eyes, the color...
 
-At the end of the network, we have a layer that transforms the last
+At the end of the network, we have a final layer that transforms the last
 representation into the prediction, such as a regression value or a probability
 distribution over the different classes in our classification problem.
 
-When we train this network on our dataset, we are not only teaching it how to
-make predictions, we are teaching it to extract intermediate representations
-with features that are useful for the task. This is interesting because these
-representations might be useful for other tasks as well. For example, imagine we
-want to add a new class of animals in our classification example. Perhaps the
-network is already capable of getting features to predict that class. We can
-then modify the final head and freeze the rest of the weights of the network.
-With fewer parameters to learn, we can train with less data, much faster and
-with a smaller energy consumption.
-
-In fact, if the learned representations are rich enough, we might be able to
-use the same network for a myriad of different tasks, training only a small
-head at the end of the network. This is called **transfer learning**: first
-**pretraining** for a **pretext task**, and then **fine-tuning** the model
-(perhaps modifying the head) on the **downstream task** we are actually
-interested in solving. The following diagram shows this process.
+When we train a network on one dataset, we are not only teaching it how to make
+predictions, we are teaching it to extract intermediate representations with
+features that are useful for the task. This is interesting because these
+representations might be useful for other tasks as well. For example, imagine
+we want to add a new class of animals in our classification example. Perhaps
+the network is already capable of getting features to predict that class. We
+can then modify the final head and freeze the rest of the weights of the
+network. With fewer parameters to learn, we can train with less data, much
+faster and with a smaller energy consumption. In fact, if the learned
+representations are rich enough, we might be able to use the same network for a
+myriad of different tasks, training only a small head at the end of the
+network. This is called **transfer learning**: first **pretraining** for a
+**pretext task**, and then **fine-tuning** the model (perhaps modifying the
+head) on the **downstream task** we are actually interested in solving. The
+following diagram shows this process.
 
 {% include figure.liquid path="assets/img/posts/2024_contrastive-learning/transfer-learning.drawio.pdf" class="img-fluid rounded z-depth-1" %}
 
 ### Learning very general representations: self-supervised learning
 
-Another important and related concept is that of **self-supervised
-learning**. This term, although poorly coined in my opinion, can be useful to
-refer to a particular set of tasks. The term refers to supervised tasks where
-we can generate a training signal automatically, without the need for human
-labeling. One example is the training procedure of the language model
-BERT<d-cite key="devlin2019BERTPretraining"/>, called Masked Language Modeling
-(MLM). In this task, some parts of the input text are masked, and the model has
-to recover them based on the unmasked context. We can then use any
-available text on the internet and generate training examples by masking parts
-of it. This allows us to generate massive datasets, and thus train very large
-neural networks with a nuanced understanding of the distribution of human text.
-These large networks learn very general representations, that we can then
-transfer to a great number of tasks. In fact, BERT achieved state-of-the-art
-performance in several downstream tasks.
+Another important and related concept is that of **self-supervised learning**.
+This term, although poorly coined in my opinion, can be useful to refer to a
+particular set of tasks. It refers to supervised tasks where we can generate a
+training signal automatically, without the need for human labeling. One example
+is the training procedure of the language model BERT<d-cite
+key="devlin2019BERTPretraining"/>, called Masked Language Modeling (MLM). In
+this task, some parts of the input text are masked, and the model has to
+recover them based on the unmasked context. We can then use any available text
+on the internet and generate training examples by masking parts of it. This
+allows us to generate massive datasets, and thus train very large neural
+networks with a nuanced understanding of the distribution of human text. These
+large networks learn very general representations, that we can then transfer to
+a great number of tasks. In fact, BERT achieved state-of-the-art performance in
+several downstream tasks.
 
 Let's consider another example, this time with images. Images allow us very
 simple forms of data augmentation: we can crop, rotate, translate, convert to
@@ -109,12 +112,13 @@ similar representations for augmented views of the same image, and different
 representations for views of different images. Again, we can generate examples
 with any image we find, allowing us to create very large datasets and train
 massive networks that obtain general representations. As we will see, this is
-in fact our first example of contrastive learning.
+our first example of contrastive learning.
 
 ### Advantages and disadvantages
 
-Representation learning (and transfer learning) has supposed a revolution in
-the field, for the reasons we discuss now:
+Representation learning, together with transfer learning and self-supervised
+learning, has produced a revolution in the field. Some of the benefits we get
+from these techniques are:
 
 1. **It can greatly improve performance for some tasks**. Let's consider the
    example of sentiment analysis in text. Textual data is very diverse and
@@ -131,28 +135,30 @@ the field, for the reasons we discuss now:
    parts of the model with the supervised data we have.
 
 3. **It improves generalization**. Let's consider the sentiment analysis task
-   again. The pretrained model might learn some features regarding sentiment,
-   and it was trained on a large dataset of text. This means that most words
-   have a representation in a common feature space. Even if some words do not
-   appear on our labeled examples, the pretrained model should be able to
-   extrapolate what it learns from the labeled data.
+   again. A pretrained model learns representations for many different tokens
+   in a lot of different contexts, since the dataset is very large. In this
+   common feature space, we may find specific features about sentiment, which
+   may be used by the final head we train on supervised data.
 
-4. **It allows us to use large and powerful model at a fraction of the cost**.
+   Since the feature space is common to a large number of tokens and contexts,
+   even if they do not appear on the supervised data, the model will be able
+   to extrapolate what they learn.
+
+4. **It allows us to use large and powerful models at a fraction of the cost**.
    We find many open source models nowadays, and using them for inference
    requires much fewer resources than for training.
 
 5. **Some model have zero-shot capabilities**. This means that we can perform
    inference on tasks it wasn't trained for without any need for fine-tuning.
    We have all seen ChatGPT performing a myriad of different tasks, even though
-   it was only trained to do next-token prediction.
-
-   Another example is CLIP<d-cite key="radford2021LearningTransferable"/>. This
-   model was trained using contrastive techniques. It encodes text and images
-   into a common feature vector space. If a text describes an image properly,
-   then their representation should be close together in the space. This allows
-   us to perform arbitrary image classification as long as we have textual
-   labels for the classes. We simply pick the class with the textual label that
-   is closest to the image embedding.
+   it was only trained to do next-token prediction. Another example is
+   CLIP<d-cite key="radford2021LearningTransferable"/>. This model was trained
+   using contrastive techniques. It encodes text and images into a common
+   feature vector space. If a text describes an image properly, then their
+   representation should be close together in the space. This allows us to
+   perform arbitrary image classification as long as we have textual labels for
+   the classes. We simply pick the class with the textual label that is closest
+   to the image embedding.
 
 Of course, not everything is bright. Training big and general models is very
 expensive, and only big companies with large resources can afford to do so. We
@@ -167,8 +173,8 @@ zero-shot capabilities are very interesting, performance tends to be subpar.
 Roughly speaking, in contrastive learning we try to learn vector representation
 of the input data by comparing and contrasting examples with each other. For
 instances that we deem similar in some sense, we want their vector
-representation to be close according to some distance or metric function. On
-the other hand, the vector representation of dissimilar examples should be
+representation to be close according to some distance or similarity function.
+On the other hand, the vector representation of dissimilar examples should be
 further apart. Images provide an easy example. We would expect pictures of
 animals to be close together, and far apart from pictures of buildings. Inside
 the cluster of pictures of animals, we would also like for pictures of the same
@@ -210,26 +216,26 @@ Let’s establish a framework and notation for the rest of the text.
 
 - The metric is given by a distance or similarity function $\mathbb{R}^m
     \times \mathbb{R}^m \to \mathbb{R}$, such as the Euclidean distance
-    $\|\|z_1 - z_2\|\|$ or the cosine similarity $\frac{\langle z_1, z_2
-    \rangle}{\|\|z_1\|\| \|\|z_2\|\|}$. Similarity functions take larger values
-    for similar examples, and will be denoted by $s$, whereas distance
-    functions, denoted by $d$, are lower bounded by zero and take smaller
+    $\|\|z_1 - z_2\|\|$ or the cosine similarity function $\frac{\langle z_1,
+    z_2 \rangle}{\|\|z_1\|\| \|\|z_2\|\|}$. Similarity functions take larger
+    values for similar examples, and will be denoted by $S$, whereas distance
+    functions, denoted by $S$, are lower bounded by zero and take smaller
     values for similar instances.
 
 - A loss function $\mathcal{L}$ is built using this similarity notion
     for a set of encoded examples, penalizing large distances for similar
     instances, and small distances for dissimilar examples. We will take
-    a closer look into loss functions in the next sections.
+    a closer look into loss functions in the next section.
 
-- Finally, given an example $x \in \mathcal{X}$, we will denote by
-    $v=e(x)$ its vector representation in the general feature space, and by
-    $z=h(v)$ its embedding in the metric space. Instances that we consider
+- Finally, given an example $x \in \mathcal{X}$, we will denote
+    its vector representation in the general feature space by $v=e(x)$, and its
+    embedding in the metric space by $z=h(v)$. Instances that we consider
     similar to an anchor example $x$ will be called positive examples and be
     denoted by a plus superscript $x^+$. We define negative examples
     analogously and denote them by a minus superscript $x^-$. The same
-    superscript notation will be applied to vectors $v$ and $z$.
+    superscript notation will also be applied to vectors $v$ and $z$.
 
-This structure is shown graphically in the following diagram:
+This structure is shown graphically for two examples in the following diagram:
 
 {% include figure.liquid path="assets/img/posts/2024_contrastive-learning/contrastive-learning.drawio.pdf" class="img-fluid rounded z-depth-1" %}
 
@@ -239,13 +245,13 @@ Loss functions are generated from the distance/similarity metric applied to
 different pairs of examples. It should penalize similar examples being far away
 and dissimilar examples being close. The latter is as important as the former,
 otherwise the network could learn the trivial representation of mapping any
-example to the same vector.
+example to the same vector. Let's take a look at some common functions.
 
 #### Pair loss
 
-Let $x \in \mathcal{X}$ be an example and $z = h(e(x))$ its embedding in the
-metric space. The *pair loss*<d-cite key="chopra2005LearningSimilarity"/> is
-defined for pairs of examples, differing for positive and negative ones: 
+Let $x \in \mathcal{X}$ be an example and $z$ its embedding in the metric
+space. The *pair loss*<d-cite key="chopra2005LearningSimilarity"/> is defined
+for pairs of examples, differing for positive and negative ones: 
 
 $$
   \begin{cases}
@@ -324,11 +330,10 @@ $$\hat{L}_{i,j} = D_{i,j} + \max \left(
    \right)
 ,$$
 
-so this loss can be interpreted as an adaptation to the triplet
-loss, trying to mine the hardest negative example of the set for each
-positive pair, and squaring after the difference of distances. As usual
-in deep learning, instead of using the full set of examples, the loss is
-approximated with a batch of smaller size.
+so this loss can be interpreted as an adaptation to the triplet loss, trying to
+mine the hardest negative example of the set for each positive pair, and also
+squaring the result. As usual in deep learning, instead of using the full set
+of examples, the loss is approximated with a batch of smaller size.
 
 #### Binary Noise-Contrastive Estimation (NCE) loss
 
@@ -340,7 +345,7 @@ and $0$ otherwise. It follows a Bernoulli distribution, and we can try to
 approximate its conditional probability mass function with our network as
 
 $$
-\hat{p} (1 | x_1, x_2) = \sigma ( s(z_1, z_2) )
+\hat{p} (1 | x_1, x_2) = \sigma ( S(z_1, z_2) )
 ,$$
 
 where $\sigma$ is the sigmoid function. If $q^+(\cdot, \cdot)$ and $q^-(\cdot,
@@ -364,8 +369,8 @@ pairs $P$ and negative pairs $N$, this yields:
 $$\begin{gathered}
   \label{eq:bin-nce-2}
   \mathcal{L}_{Bin-NCE} =
-  -\frac{1}{|P|} \sum_{(i,j) \in P} \log \sigma(s(z_i, z_j))  \\
-  -\frac{1}{|N|} \sum_{(i,j) \in N} \log (1-\sigma(s(z_i, z_j)))
+  -\frac{1}{|P|} \sum_{(i,j) \in P} \log \sigma(S(z_i, z_j))  \\
+  -\frac{1}{|N|} \sum_{(i,j) \in N} \log (1-\sigma(S(z_i, z_j)))
 .
 \end{gathered}$$
 
@@ -382,7 +387,7 @@ on a similarity score with respect to $x$:
 
 $$
 \label{eq:info-nce-p}
-\hat{p} (i|x, S) = \frac{\exp(s(x, x_i))}{\sum_{j = 0}^{n} \exp(s(x, x_j))}
+\hat{p} (i|x) = \frac{\exp(S(x, x_i))}{\sum_{j = 0}^{n} \exp(S(x, x_j))}
 .$$
 
 Minimizing the negative log-likelihood of the true positive yields:
@@ -390,28 +395,28 @@ Minimizing the negative log-likelihood of the true positive yields:
 $$
 \label{eq:info-nce}
 \mathcal{L}_{InfoNCE} = 
-  - \mathbb{E} \log \frac{\exp(s(x, x_0^+))}{\sum_{j = 0}^{n} \exp(s(x, x_j))}
+  - \mathbb{E} \log \frac{\exp(S(x, x_0^+))}{\sum_{j = 0}^{n} \exp(S(x, x_j))}
 .$$
 
 As we will see, it is a common setting to have batches of pairs of similar
 instances $(x_1,x_1^\prime),\cdots,(x_n,x_n^\prime)$, where instances across
-pairs are considered to be dissimilar. We can compute a similarity matrix $S =
-(s(z_i, z_j^\prime))_{i,j}$, where the main diagonal values should be high and
-the rest should be low. In this case, one can calculate the InfoNCE across rows
-or columns. It is also possible to average both options, yielding a *symmetric
-InfoNCE* loss.
+pairs are considered to be dissimilar. We can compute a similarity matrix
+$\mathcal{S}  = (S(z_i, z_j^\prime))_{i,j}$, where the main diagonal values
+should be high and the rest should be low. In this case, one can calculate the
+InfoNCE across rows or columns. It is also possible to average both options,
+yielding a *symmetric InfoNCE* loss.
 
 #### NT-Xent
 
-A temperature parameter $\tau$ can be included in the sotfmax operation (see
-e.g. ), transforming the softmax probability distribution into
+A temperature parameter $\tau$ can be included in the sotfmax operation,
+transforming the softmax probability distribution into
 
 $$
-P(i|x, S) = \frac{\exp(s(x, x_i) / \tau)}{\sum_{j = 0}^{n} \exp(s(x, x_j) / \tau)}
+P(i|x) = \frac{\exp(S(x, x_i) / \tau)}{\sum_{j = 0}^{n} \exp(S(x, x_j) / \tau)}
 .$$
 
 A small value of $\tau$ makes the softmax sharper, and small differences
-between the similarity of positive and negative examples already produces a
+between the similarity of positive and negative examples already produce a
 high likelihood. A large value of $\tau$ forces the difference in similarity to
 be large. This parameter can be viewed as the margin parameter in previous
 functions. This modified InfoNCE loss is called *NT-Xent* (normalized
@@ -421,25 +426,27 @@ temperature-scaled cross entropy loss)<d-cite key="chen2020SimpleFramework"/>.
 
 We have already seen how to create a loss function to train our model, but how
 do we get appropriate data? In most cases, the question is how to generate
-pairs of similar examples, as sometimes you can get away with assuming that
+pairs of *similar* examples, as you can often get away with the assumption that
 examples in different pairs are dissimilar. This is the case when you have a
 huge domain, such as a large amount of internet images. Getting two similar
-examples in the same batch by sampling randomly is unlikely. Still, we could
-incur in false negatives, something we will discuss in the next section. This
-setting is called *instance-level discrimination*<d-cite
-key="wu2018UnsupervisedFeature"/>, as we assume that each instance forms its
-own class. We will now list some of the ways in which we can generate datasets
+examples in the same batch by sampling randomly is unlikely. Still, with this
+assumption we could incur in false negatives, something we will discuss in the
+next section. Let's see now some of the ways in which datasets are generated
 for contrastive learning.
+<!-- This setting is called *instance-level discrimination*<d-cite -->
+<!-- key="wu2018UnsupervisedFeature"/>, as we assume that each instance forms its -->
+<!-- own class. We will now list some of the ways in which we can generate datasets -->
+<!-- for contrastive learning. -->
 
 #### Human supervision
 
 Of course, human annotation is always an option, albeit a very expensive one.
 Unfortunately, this is sometimes necessary. We previously talked about CLIP, a
-model that learned representations for text and image, mapping texts that
-correctly describe an image to an embedding close to the embedding of the
-image. In this case, there is no way around getting someone to create captions
-for different images (although there could be some future in synthetic data
-generation with multimodal models).
+model that learned representations for text and image, mapping a text that
+correctly describe an image to an embedding that is close to the embedding of
+the image. In this case, there is no way around getting someone to create
+captions for different images (although in the future synthetic data generation
+with multimodal models might be an option).
 
 One way to reduce the amount of data necessary when human labeling is required
 is to first pretrain the encoders with some other self-supervised technique.
@@ -450,9 +457,9 @@ representations of both encoders to a common metric space.
 #### Self-supervision
 
 What if we want to generate large amounts of data from existing sources
-automatically? We now list some techniques to do this. We assume in all of the
-*instance-level discrimination* setting described earlier, so we only need to
-generate positive examples. The following are just some examples:
+automatically? As explained earlier, we will generate pairs of similar
+instances, and assume that images in different pairs are dissimilar. The
+following are just some examples:
 
 * **Data augmentation**. In the particular context of contrastive learning, a
     transformation that does not change the instance semantically can be applied to
@@ -479,10 +486,10 @@ generate positive examples. The following are just some examples:
     the training of SimCLR was very sensitive to the choice of data
     augmentation techniques.
 
-* **Multi-sensor**. When multiple inputs are capture simultaneously, we can
+* **Multi-sensor**. When multiple inputs are captured simultaneously, we can
     use all inputs from corresponding times. For example, capturing the same
-    image from different angles with multiple cameras, or the combination of
-    audio and image in videos.
+    image from different angles with multiple cameras, or the audio and images
+    in videos.
 
 * **Continuity**. This can be applied to domains where there
     are sequences with some continuity. For example, videos are sequences of
@@ -492,35 +499,33 @@ generate positive examples. The following are just some examples:
 
 ### Discussion on negative examples
 
-We have seen in that most loss functions use both positive and negatives
-examples. There is a simple theoretical reason for this: if negative examples
+The loss functions we have seen thus far use both positive and negatives
+examples. We already gave a theoretical reason for this: if negative examples
 were not used, a trivial representation mapping everything to one vector would
-obtain perfect performance.
+obtain perfect performance. There is empirical evidence showing that
+performance is increased from contrasting with many negative examples. For
+example, Chen et al. <d-cite key="chen2020SimpleFramework"/>found that training
+with very large batch sizes greatly improved performance. In their setting, all
+other examples in the batch were considered as negative, and thus the number of
+negatives per example scaled with the batch size.
 
-There is empirical evidence showing that performance is increased from
-contrasting with many negative examples. For example, Chen et al. <d-cite
-key="chen2020SimpleFramework"/>found that training with very large batch sizes
-greatly improved performance. In their setting, all other examples in the batch
-were considered as negative, and thus the number of negatives per example
-scaled with the batch size.
-
-There are several topics discussed around the usage and generation of
-negative examples in contrastive learning, and this section provides an
-overview of some of them.
+The concept of negative examples or, more generally, preventing
+representational collapse, is quite important in contrastive learning, and
+there are some topics around it that are worth discussing.
 
 #### False negatives in self-supervised contrastive learning
 
-In data generation section, we already talked at the possibility of false
+In the data generation section we already talked at the possibility of false
 negatives when there is no supervision. This is because we are drawing from the
 full distribution of examples instead of the distribution of negative examples,
-creating a bias. Some work has been done on correcting this while not requiring
+creating a bias. Some work has been done on alleviating this while not requiring
 manual labels for negatives. While we won't get into detail, the reader may
 find an example in the *Debiased Contrastive loss* proposed in <d-cite
 key="chuang2020DebiasedContrastive"/>.
 
 #### Alleviating hardware bottlenecks for large amounts of negative samples
 
-We have seen the use of examples in the same batch as negatives. This presents
+The use of examples in the same batch as negatives presents
 a major drawback in terms of computing resources. If we want to use many
 negative examples, we are forced to select a very large batch size, requiring a
 lot of GPU memory. Some work has been done on decoupling batch size and the
@@ -561,7 +566,7 @@ finding meaningful negatives to learn from.
 
 Conceptually, we might intuit that it is more difficult for a model to
 distinguish between a dog and a cat than between a dog and a building. In
-practice, we might select hard negative examples based on their representation.
+practice, we could select hard negative examples based on their representation.
 Examples with close representations are difficult to distinguish for the model.
 Kalantidis et al.<d-cite key="kalantidis2020HardNegative"/> make use of this,
 together with some data mixing techniques.
@@ -579,11 +584,10 @@ techniques to prevent it could allow us to remove negative examples.
 
 The work by Grill et al. <d-cite key="grill2020BootstrapYour"/> goes in this
 line. They used two neural networks, an online (predictive) network and a
-target network, similar to the idea in Deep Q Learning. They use only positive
-examples, and for those the online network tries to predict the metric
-representation from the target network. The parameters of the target network
-are updated after every iteration with an exponential moving average of the
-online parameters:
+target network, similar to Deep Q Learning. They use only positive examples,
+and for each pair the online network tries to predict the metric representation
+from the target network. The parameters of the target network are updated after
+every iteration with an exponential moving average of the online parameters:
 
 $$
 \theta_{target}  \gets \alpha \theta_{target}  + (1 - \alpha) \theta_{online} 
@@ -603,7 +607,7 @@ SimSiam<d-cite key="chen2021ExploringSimple"/> is an even simpler technique
 that successfully avoided representational collapse. I deviate from their
 notation in the explanation to keep the one in this post. If $\hat{e}=e \circ
 h$ is the complete encoder onto the metric space, and $\hat{h}$ is an additional
-head the call the predictor, then their loss functions for similar instances
+head they call the predictor, then their loss functions for similar instances
 $x_1$ and $x_2$ is given by the formula:
 
 $$
@@ -619,22 +623,23 @@ $$
 ,$$
 
 where $SG$ is the stop-gradient function, preventing backpropagation through
-that branch, and $D$ is the negative cosine similarity. Again, how this
-asymmetry through the additional head and stopping gradient propagation is not
-fully understood to the best of my knowledge.
+that branch of computation, and $D$ is the negative cosine similarity. Again,
+how this asymmetry through the additional head and stopping gradient
+propagation achieves its objective of avoiding representation collapse is not
+fully understood (to the best of my knowledge).
 
 Bardes et al. <d-cite key="bardes2022vicreg"/> proposed a much more intuitive
 approach, using VICReg (Variance-Invariance-Covariance regularization). Let
-$(z_1, z_1^\prime), \dots, (z_n, z_n^\prime)$ be metric representations of
-positive pairs in a single batch, where each $z_i, z_i^\prime$ is a vector of
-dimension $d$. Let $C(Z)$ be the covariance matrix **of the features** for the
-matrix $Z=(z_1, \dots, z_n) \in \mathbb{R}^{n \times d}$:
+$(z_1,z_1^\prime),\cdots,(z_n,z_n^\prime)$ be $d$-dimensional metric
+representations of positive pairs in a single batch. Let $C(Z)$ be the
+covariance matrix **of the features** for the matrix $Z=(z_1,\cdots,z_n) \in
+\mathbb{R}^{n \times d}$, that is,
 
 $$
 C(Z) = \frac{1}{n-1} \sum_{i=1}^{n} (z_i - \overline{z})(z_i - \overline{z})^T
 ,$$
 
-where $\hat{z} = \frac{1}{n} \sum_{i=1}^{n} z_i$ is the empirical mean. Then the
+where $\overline{z} = \frac{1}{n} \sum_{i=1}^{n} z_i$ is the empirical mean. Then the
 loss function has the following three terms:
 
 * **Invariance**. Forces the positive examples to be close together:
@@ -676,29 +681,30 @@ interpretability purposes.
 
 ### Applications
 
-We have already discussed the benefits of representation learning in general.
+We have already talked about the benefits of representation learning in general.
 But does contrastive learning have any particular advantages? This is what we
 discuss here.
 
 The first advantage is that it provides other training ideas for representation
-learning. These techniques have shown great success in producing state-of-the-art
-performance in semi-supervised and transfer learning. This is the example of
-the SimCLR model for images<d-cite key="chen2020SimpleFramework"/>, for example.
+learning. These techniques have shown great success, reaching state-of-the-art
+performance in semi-supervised and transfer learning. The SimCLR model for
+images<d-cite key="chen2020SimpleFramework"/> is an example of this.
 
 A second advantage is the metric representation that they learn. These
-representations can layer be used in very efficient<d-footnote>There are
+representations can later be used in very efficient<d-footnote>There are
 techniques to approximately find the closest vectors to the input in a vector
 database, such as Locality-Sensitive Hashing or k-d Trees.</d-footnote> vector
-searches, allowing us to search for examples in our database that are similar
-**semantically** to the input example. Thinking of search engines for examples,
+searches, allowing us to search for examples in our database that are
+**semantically** similar to the input. Thinking of search engines for examples,
 we can now find texts that talk about something similar to our search prompt,
 without the need to use any common word. With multilingual models, we might
-even search in many different languages at the same time. Many language models
-have been trained to do this, such as the old Sentence-BERT<d-cite key="reimers2019SentenceBERTSentencea"/>.
+even search semantically in different languages at the same time. We find many
+open source language models that have been trained for this semantic encoding,
+and that we can readily apply to any search application.
 
-Although not exclusive to contrastive learning techniques, these techniques
-allow us to align different encoders in a common representation space, in
-particular encoders of different modalities. This is the case of the
+Although not exclusive to contrastive learning, another advantage is that these
+techniques allow us to align different encoders in a common representation
+space, in particular encoders of different modalities. This is the case of the
 CLIP<d-cite key="radford2021LearningTransferable"/> model we have already
 talked about.
 
@@ -708,7 +714,7 @@ category, you can classify a new example by selecting the category with the
 closest metric representation. In the case of CLIP, since it has a text
 encoder, you can provide any textual label that describes the category, and
 apply this inference technique. If there are no textual encoders, you could
-still use a small portion of labeled data to create a metric representation of
+still use a small set of labeled data to create a metric representation of
 each class. Of course, performance is not as good as with fully-trained models,
 specially for very niche categories, but it might still be useful with very few
 resources.
@@ -716,14 +722,21 @@ resources.
 
 ## Conclusions
 
-That it is for this post. I would say the main takeaways are the following:
-* Contrastive learning provides another way to learn representations.
-* These models allow for great applications such as semantic vector search
-    or zero-shot classification.
-* Training one of these models from scratch might requires a particularly
-    large amount of resources, given that it needs a large batch size. The
-    techniques to avoid the need for negative examples might also suffer a bit
-    from smaller batches, at least the VICReg approach, from what I have read.
-* Different loss functions and ways to generate data for contrastive learning.
+That it is for this post. I hope you found it useful and not too boring! As
+always, the best way to learn about anything is to get your hands dirty. In
+this case, you can try programming some training loop with a small dataset and
+a loss function, such as NT-Xent. You can also try programming some of the
+techniques to avoid representational collapse and see how they perform. Don't
+doubt in hitting me up with any feedback or corrections!
 
-I hope the post was useful to you and perhaps not too boring to read!
+<!-- I would say the main takeaways are the following: -->
+<!-- * Contrastive learning provides another way to learn representations. -->
+<!-- * These models allow for great applications such as semantic vector search -->
+<!--     or zero-shot classification. -->
+<!-- * Training one of these models from scratch might requires a particularly -->
+<!--     large amount of resources, given that it needs a large batch size. The -->
+<!--     techniques to avoid the need for negative examples might also suffer a bit -->
+<!--     from smaller batches, at least the VICReg approach, from what I have read. -->
+<!-- * Different loss functions and ways to generate data for contrastive learning. -->
+<!---->
+<!-- I hope the post was useful to you and perhaps not too boring to read! -->
