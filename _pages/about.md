@@ -13,14 +13,11 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-**Hi!** I am a Machine Learning and Big Data MSc student at Technical University
-of Madrid, and also an Artificial Intelligence Researcher at the Applied
-Intelligence and Data Analysis group at the same university. Previously I
-studied Mathematics and Computer Science jointly at University of Murcia. You
-are currently looking at my personal website. Here you will find my
-[blog](/blog/), my [cv](/cv/), several ways to contact me (see links below) and
-personal and academic [projects](/projects/) related to my fields of interests.
+**Hi!**
+I am a PhD Candidate at Technical University of Madrid. I previously studied the
+Machine Learning and Big Data MSc at the same university, and the joint BSc
+program in Mathematics and Computer Science at University of Murcia.
 
-My hope for this website is to upload content related to my fields of
-intereste, both technical (mathematics, AI, Deep Learning, Data Science,
-programming, HPC,...) and non-technical (philosophy, psychology or literature).
+My main research interest lies in understanding Deep Learning, and in particular
+its applications to NLP, generative modeling and reinforcement learning. I am
+currently working on efficient Transformers and detecting AI-generated text.

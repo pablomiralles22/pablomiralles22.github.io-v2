@@ -2,7 +2,8 @@
 
 CONFIG_FILE=_config.yml 
 
-OPTIONS=""
+# OPTIONS=""
+OPTIONS="--draft"
 # OPTIONS="--future --unpublished --draft"
 
 COMMAND="jekyll serve $OPTIONS --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling"

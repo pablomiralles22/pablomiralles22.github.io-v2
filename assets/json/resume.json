@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Pablo Miralles González",
-    "label": "PhD Student",
+    "label": "PhD Candidate",
     "image": "",
     "email": "pablo.miralles [at] upm.es",
     "phone": "",
@@ -66,11 +66,24 @@
       "location": "Madrid, Spain",
       "url": "https://www.upm.es/",
       "area": "",
+      "studyType": "PhD in Computer Science",
+      "startDate": "2024-09-01",
+      "endDate": null,
+      "score": null,
+      "courses": [ ]
+    },
+    {
+      "institution": "Technical University of Madrid",
+      "location": "Madrid, Spain",
+      "url": "https://www.upm.es/",
+      "area": "",
       "studyType": "MSc in Machine Learning and Big Data",
       "startDate": "2023-09-01",
       "endDate": "2024-07-18",
-      "score": "9.53",
-      "courses": [ ]
+      "score": "9.65",
+      "courses": [
+        "Average of 9.65 / 10.0"
+      ]
     },
     {
       "institution": "University of Murcia",
