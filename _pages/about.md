@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: "Technical University of Madrid. Deep Learning and NLP research group."
 
 profile:
   align: right
