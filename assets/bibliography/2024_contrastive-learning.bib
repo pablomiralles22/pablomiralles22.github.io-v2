@@ -3,7 +3,7 @@
   booktitle = {International Conference on Learning Representations},
   author = {Bardes, Adrien and Ponce, Jean and LeCun, Yann},
   year = {2022},
-  keywords = {TO\_READ},
+  keywords = {Contrastive Learning,TO\_READ},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/VVXJBCVT/Bardes et al. - 2022 - VICReg Variance-invariance-covariance regularizat.pdf}
 }
 
@@ -19,6 +19,7 @@
   urldate = {2023-10-03},
   abstract = {This paper presents SimCLR: a simple framework for contrastive learning of visual representations. We simplify recently proposed contrastive self-supervised learning algorithms without requiring specialized architectures or a memory bank. In order to understand what enables the contrastive prediction tasks to learn useful representations, we systematically study the major components of our framework. We show that (1) composition of data augmentations plays a critical role in defining effective predictive tasks, (2) introducing a learnable nonlinear transformation between the representation and the contrastive loss substantially improves the quality of the learned representations, and (3) contrastive learning benefits from larger batch sizes and more training steps compared to supervised learning. By combining these findings, we are able to considerably outperform previous methods for self-supervised and semi-supervised learning on ImageNet. A linear classifier trained on self-supervised representations learned by SimCLR achieves 76.5\% top-1 accuracy, which is a 7\% relative improvement over previous state-of-the-art, matching the performance of a supervised ResNet-50. When fine-tuned on only 1\% of the labels, we achieve 85.8\% top-5 accuracy, outperforming AlexNet with 100X fewer labels.},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/3BECA4WF/Chen et al. - 2020 - A Simple Framework for Contrastive Learning of Vis.pdf}
 }
 
@@ -36,7 +37,7 @@
   copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
   isbn = {978-1-66544-509-2},
   langid = {english},
-  keywords = {TO\_READ},
+  keywords = {Contrastive Learning,TO\_READ},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/D5XCLS53/Chen and He - 2021 - Exploring Simple Siamese Representation Learning.pdf}
 }
 
@@ -54,6 +55,7 @@
   abstract = {We present a method for training a similarity metric from data. The method can be used for recognition or verification applications where the number of categories is very large and not known during training, and where the number of training samples for a single category is very small. The idea is to learn a function that maps input patterns into a target space such that the ¢¤{\pounds} norm in the target space approximates the ``semantic'' distance in the input space. The method is applied to a face verification task. The learning process minimizes a discriminative loss function that drives the similarity metric to be small for pairs of faces from the same person, and large for pairs from different persons. The mapping from raw to the target space is a convolutional network whose architecture is designed for robustness to geometric distortions. The system is tested on the Purdue/AR face database which has a very high degree of variability in the pose, lighting, expression, position, and artificial occlusions such as dark glasses and obscuring scarves.},
   isbn = {978-0-7695-2372-9},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/RSDYBVHU/Chopra et al. - 2005 - Learning a Similarity Metric Discriminatively, wit.pdf}
 }
 
@@ -67,6 +69,7 @@
   publisher = {Curran Associates, Inc.},
   urldate = {2023-10-04},
   abstract = {A prominent technique for self-supervised representation learning has been to contrast semantically similar and dissimilar pairs of samples. Without access to labels, dissimilar (negative) points are typically taken to be randomly sampled datapoints, implicitly accepting that these points may, in reality, actually have the same label. Perhaps unsurprisingly, we observe that sampling negative examples from truly different labels improves performance, in a synthetic setting where labels are available. Motivated by this observation, we develop a debiased contrastive objective that corrects for the sampling of same-label datapoints, even without knowledge of the true labels. Empirically, the proposed objective consistently outperforms the state-of-the-art for representation learning in vision, language, and reinforcement learning benchmarks. Theoretically, we establish generalization bounds for the downstream classification task.},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/4DM7TCDK/Chuang et al. - 2020 - Debiased Contrastive Learning.pdf}
 }
 
@@ -83,6 +86,7 @@
   doi = {10.18653/v1/N19-1423},
   urldate = {2023-09-25},
   abstract = {We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5 (7.7 point absolute improvement), MultiNLI accuracy to 86.7\% (4.6\% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/WRZQPB7B/Devlin et al. - 2019 - BERT Pre-training of Deep Bidirectional Transform.pdf}
 }
 
@@ -100,7 +104,7 @@
   urldate = {2023-10-07},
   abstract = {Pretrained language models such as BERT, GPT have shown great effectiveness in language understanding. The auxiliary predictive tasks in existing pretraining approaches are mostly defined on tokens, thus may not be able to capture sentence-level semantics very well. To address this issue, we propose CERT: Contrastive self-supervised Encoder Representations from Transformers, which pretrains language representation models using contrastive self-supervised learning at the sentence level. CERT creates augmentations of original sentences using back-translation. Then it finetunes a pretrained language encoder (e.g., BERT) by predicting whether two augmented sentences originate from the same sentence. CERT is simple to use and can be flexibly plugged into any pretraining-finetuning NLP pipeline. We evaluate CERT on 11 natural language understanding tasks in the GLUE benchmark where CERT outperforms BERT on 7 tasks, achieves the same performance as BERT on 2 tasks, and performs worse than BERT on 2 tasks. On the averaged score of the 11 tasks, CERT outperforms BERT. The data and code are available at https://github.com/UCSD-AI4H/CERT},
   archiveprefix = {arXiv},
-  keywords = {Computer Science - Computation and Language,Computer Science - Machine Learning,Statistics - Machine Learning},
+  keywords = {Computer Science - Computation and Language,Computer Science - Machine Learning,Contrastive Learning,Statistics - Machine Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/L5CAA5RA/2005.html}
 }
 
@@ -114,6 +118,7 @@
   publisher = {Curran Associates, Inc.},
   urldate = {2023-10-06},
   abstract = {We introduce Bootstrap Your Own Latent (BYOL), a new approach to self-supervised image representation learning. BYOL relies on two neural networks, referred to as online and target networks, that interact and learn from each other. From an augmented view of an image, we train the online network to predict the target network representation of the same image under a different augmented view. At the same time, we update the target network with a slow-moving average of the online network. While state-of-the art methods intrinsically rely on negative pairs, BYOL achieves a new state of the art without them. BYOL reaches 74.3\% top-1 classification accuracy on ImageNet using the standard linear evaluation protocol with a standard ResNet-50 architecture and 79.6\% with a larger ResNet. We also show that BYOL performs on par or better than the current state of the art on both transfer and semi-supervised benchmarks.},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/3DCGJIU3/Grill et al. - 2020 - Bootstrap Your Own Latent - A New Approach to Self.pdf}
 }
 
@@ -130,6 +135,7 @@
   urldate = {2023-10-09},
   abstract = {We present a new estimation principle for parameterized statistical models. The idea is to perform nonlinear logistic regression to discriminate between the observed data and some artificially generated noise, using the model log-density function in the regression nonlinearity.  We show that this leads to a consistent (convergent) estimator of the parameters, and analyze the asymptotic variance.  In particular, the method is shown to directly work for unnormalized models, i.e. models where the density function does not integrate to one. The normalization constant can be estimated just like any other parameter. For a tractable ICA model, we compare the method with other estimation methods that can be used to learn unnormalized models, including score matching, contrastive divergence, and maximum-likelihood where the normalization constant is estimated with importance sampling. Simulations show that noise-contrastive estimation offers the best trade-off between computational and statistical efficiency. The method is then applied to the modeling of natural images: We show that the method can successfully estimate a large-scale two-layer model and a Markov random field.},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/DXLHRT3V/Gutmann and Hyvärinen - 2010 - Noise-contrastive estimation A new estimation pri.pdf}
 }
 
@@ -147,6 +153,7 @@
   abstract = {We present Momentum Contrast (MoCo) for unsupervised visual representation learning. From a perspective on contrastive learning [29] as dictionary look-up, we build a dynamic dictionary with a queue and a moving-averaged encoder. This enables building a large and consistent dictionary on-the-fly that facilitates contrastive unsupervised learning. MoCo provides competitive results under the common linear protocol on ImageNet classification. More importantly, the representations learned by MoCo transfer well to downstream tasks. MoCo can outperform its supervised pre-training counterpart in 7 detection/segmentation tasks on PASCAL VOC, COCO, and other datasets, sometimes surpassing it by large margins. This suggests that the gap between unsupervised and supervised representation learning has been largely closed in many vision tasks.},
   isbn = {978-1-72817-168-5},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/EGJWMDXX/He et al. - 2020 - Momentum Contrast for Unsupervised Visual Represen.pdf}
 }
 
@@ -160,6 +167,7 @@
   publisher = {Curran Associates, Inc.},
   urldate = {2023-10-04},
   abstract = {Contrastive learning has become a key component of self-supervised learning approaches for computer vision. By learning to embed two augmented versions of the same image close to each other and to push the embeddings of different images apart, one can train highly transferable visual representations. As revealed by recent studies, heavy data augmentation and large sets of negatives are both crucial in learning such representations. At the same time, data mixing strategies, either at the image or the feature level, improve both supervised and semi-supervised learning by synthesizing novel examples, forcing networks to learn more robust features. In this paper, we argue that an important aspect of contrastive learning, i.e. the effect of hard negatives, has so far been neglected. To get more meaningful negative samples, current top contrastive self-supervised learning approaches either substantially increase the batch sizes, or keep very large memory banks; increasing memory requirements, however, leads to diminishing returns in terms of performance. We therefore start by delving deeper into a top-performing framework and show evidence that harder negatives are needed to facilitate better and faster learning. Based on these observations, and motivated by the success of data mixing, we propose hard negative mixing strategies at the feature level, that can be computed on-the-fly with a minimal computational overhead. We exhaustively ablate our approach on linear classification, object detection, and instance segmentation and show that employing our hard negative mixing procedure improves the quality of visual representations learned by a state-of-the-art self-supervised learning method.},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/EM9KA9B9/Kalantidis et al. - 2020 - Hard Negative Mixing for Contrastive Learning.pdf}
 }
 
@@ -175,6 +183,7 @@
   urldate = {2023-10-15},
   abstract = {While supervised learning has enabled great progress in many applications, unsupervised learning has not seen such widespread adoption, and remains an important and challenging endeavor for artificial intelligence. In this work, we propose a universal unsupervised learning approach to extract useful representations from high-dimensional data, which we call Contrastive Predictive Coding. The key insight of our model is to learn such representations by predicting the future in latent space by using powerful autoregressive models. We use a probabilistic contrastive loss which induces the latent space to capture information that is maximally useful to predict future samples. It also makes the model tractable by using negative sampling. While most prior work has focused on evaluating representations for a particular modality, we demonstrate that our approach is able to learn useful representations achieving strong performance on four distinct domains: speech, images, text and reinforcement learning in 3D environments.},
   archiveprefix = {arXiv},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/YNXCMK48/Oord et al. - 2019 - Representation Learning with Contrastive Predictiv.pdf;/Users/pablomirallesgonzalez/Software/Zotero/storage/5RDN5BBA/1807.html}
 }
 
@@ -190,7 +199,7 @@
   urldate = {2023-10-03},
   abstract = {State-of-the-art computer vision systems are trained to predict a fixed set of predetermined object categories. This restricted form of supervision limits their generality and usability since additional labeled data is needed to specify any other visual concept. Learning directly from raw text about images is a promising alternative which leverages a much broader source of supervision. We demonstrate that the simple pre-training task of predicting which caption goes with which image is an efficient and scalable way to learn SOTA image representations from scratch on a dataset of 400 million (image, text) pairs collected from the internet. After pre-training, natural language is used to reference learned visual concepts (or describe new ones) enabling zero-shot transfer of the model to downstream tasks. We study the performance of this approach by benchmarking on over 30 different existing computer vision datasets, spanning tasks such as OCR, action recognition in videos, geo-localization, and many types of fine-grained object classification. The model transfers non-trivially to most tasks and is often competitive with a fully supervised baseline without the need for any dataset specific training. For instance, we match the accuracy of the original ResNet-50 on ImageNet zero-shot without needing to use any of the 1.28 million training examples it was trained on.},
   langid = {english},
-  keywords = {\_tablet},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/GVVYH3B2/Radford et al. - 2021 - Learning Transferable Visual Models From Natural L.pdf}
 }
 
@@ -207,6 +216,7 @@
   doi = {10.18653/v1/D19-1410},
   urldate = {2023-10-04},
   abstract = {BERT (Devlin et al., 2018) and RoBERTa (Liu et al., 2019) has set a new state-of-the-art performance on sentence-pair regression tasks like semantic textual similarity (STS). However, it requires that both sentences are fed into the network, which causes a massive computational overhead: Finding the most similar pair in a collection of 10,000 sentences requires about 50 million inference computations ({\textbackslash}textasciitilde65 hours) with BERT. The construction of BERT makes it unsuitable for semantic similarity search as well as for unsupervised tasks like clustering. In this publication, we present Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity. This reduces the effort for finding the most similar pair from 65 hours with BERT / RoBERTa to about 5 seconds with SBERT, while maintaining the accuracy from BERT. We evaluate SBERT and SRoBERTa on common STS tasks and transfer learning tasks, where it outperforms other state-of-the-art sentence embeddings methods.},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/XQPRURCI/Reimers and Gurevych - 2019 - Sentence-BERT Sentence Embeddings using Siamese B.pdf}
 }
 
@@ -222,6 +232,7 @@
   urldate = {2023-10-11},
   abstract = {Bootstrap Your Own Latent (BYOL) is a self-supervised learning approach for image representation. From an augmented view of an image, BYOL trains an online network to predict a target network representation of a different augmented view of the same image. Unlike contrastive methods, BYOL does not explicitly use a repulsion term built from negative pairs in its training objective. Yet, it avoids collapse to a trivial, constant representation. Thus, it has recently been hypothesized that batch normalization (BN) is critical to prevent collapse in BYOL. Indeed, BN flows gradients across batch elements, and could leak information about negative views in the batch, which could act as an implicit negative (contrastive) term. However, we experimentally show that replacing BN with a batch-independent normalization scheme (namely, a combination of group normalization and weight standardization) achieves performance comparable to vanilla BYOL (\$73.9{\textbackslash}\%\$ vs. \$74.3{\textbackslash}\%\$ top-1 accuracy under the linear evaluation protocol on ImageNet with ResNet-\$50\$). Our finding disproves the hypothesis that the use of batch statistics is a crucial ingredient for BYOL to learn useful representations.},
   archiveprefix = {arXiv},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/EPXGC8ZE/Richemond et al. - 2020 - BYOL works even without batch statistics.pdf;/Users/pablomirallesgonzalez/Software/Zotero/storage/7L246Z9I/2010.html}
 }
 
@@ -240,6 +251,7 @@
   abstract = {Despite significant recent advances in the field of face recognition [10, 14, 15, 17], implementing face verification and recognition efficiently at scale presents serious challenges to current approaches. In this paper we present a system, called FaceNet, that directly learns a mapping from face images to a compact Euclidean space where distances directly correspond to a measure of face similarity. Once this space has been produced, tasks such as face recognition, verification and clustering can be easily implemented using standard techniques with FaceNet embeddings as feature vectors.},
   isbn = {978-1-4673-6964-0},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/9WSVDU46/Schroff et al. - 2015 - FaceNet A unified embedding for face recognition .pdf}
 }
 
@@ -257,6 +269,7 @@
   abstract = {Learning the distance metric between pairs of examples is of great importance for learning and visual recognition. With the remarkable success from the state of the art convolutional neural networks, recent works [1, 31] have shown promising results on discriminatively training the networks to learn semantic feature embeddings where similar examples are mapped close to each other and dissimilar examples are mapped farther apart. In this paper, we describe an algorithm for taking full advantage of the training batches in the neural network training by lifting the vector of pairwise distances within the batch to the matrix of pairwise distances. This step enables the algorithm to learn the state of the art feature embedding by optimizing a novel structured prediction objective on the lifted problem. Additionally, we collected Stanford Online Products dataset: 120k images of 23k classes of online products for metric learning. Our experiments on the CUB-200-2011 [37], CARS196 [19], and Stanford Online Products datasets demonstrate significant improvement over existing deep feature embedding methods on all experimented embedding sizes with the GoogLeNet [33] network. The source code and the dataset are available at: https://github.com/rksltnl/ Deep-Metric-Learning-CVPR16.},
   isbn = {978-1-4673-8851-1},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/NHDHY2H4/Song et al. - 2016 - Deep Metric Learning via Lifted Structured Feature.pdf}
 }
 
@@ -274,6 +287,7 @@
   abstract = {Neural net classifiers trained on data with annotated class labels can also capture apparent visual similarity among categories without being directed to do so. We study whether this observation can be extended beyond the conventional domain of supervised learning: Can we learn a good feature representation that captures apparent similarity among instances, instead of classes, by merely asking the feature to be discriminative of individual instances? We formulate this intuition as a non-parametric classification problem at the instance-level, and use noisecontrastive estimation to tackle the computational challenges imposed by the large number of instance classes.},
   isbn = {978-1-5386-6420-9},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/2EMN9I2F/Wu et al. - 2018 - Unsupervised Feature Learning via Non-parametric I.pdf}
 }
 
@@ -290,6 +304,7 @@
   urldate = {2023-10-06},
   abstract = {Self-supervised learning (SSL) is rapidly closing the gap with supervised methods on large computer vision benchmarks. A successful approach to SSL is to learn embeddings which are invariant to distortions of the input sample. However, a recurring issue with this approach is the existence of trivial constant solutions. Most current methods avoid such solutions by careful implementation details. We propose an objective function that naturally avoids collapse by measuring the cross-correlation matrix between the outputs of two identical networks fed with distorted versions of a sample, and making it as close to the identity matrix as possible. This causes the embedding vectors of distorted versions of a sample to be similar, while minimizing the redundancy between the components of these vectors. The method is called Barlow Twins, owing to neuroscientist H. Barlow's redundancy-reduction principle applied to a pair of identical networks. Barlow Twins does not require large batches nor asymmetry between the network twins such as a predictor network, gradient stopping, or a moving average on the weight updates. Intriguingly it benefits from very high-dimensional output vectors. Barlow Twins outperforms previous methods on ImageNet for semi-supervised classification in the low-data regime, and is on par with current state of the art for ImageNet classification with a linear classifier head, and for transfer tasks of classification and object detection.},
   langid = {english},
+  keywords = {Contrastive Learning},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/NA4HJPVX/Zbontar et al. - 2021 - Barlow Twins Self-Supervised Learning via Redunda.pdf}
 }
 
@@ -298,6 +313,6 @@
   booktitle = {International Conference on Learning Representations},
   author = {Zhang, Chaoning and Zhang, Kang and Zhang, Chenshuang and Pham, Trung X. and Yoo, Chang D. and Kweon, In So},
   year = {2022},
-  keywords = {TO-READ,TO-SKIM,TO\_READ},
+  keywords = {Contrastive Learning,TO\_READ},
   file = {/Users/pablomirallesgonzalez/Software/Zotero/storage/8S5XDC5E/Zhang et al. - 2022 - How does SimSiam avoid collapse without negative s.pdf}
 }
