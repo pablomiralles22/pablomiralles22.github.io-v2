@@ -25,6 +25,7 @@ RUN apt-get update -y && \
         build-essential \
         curl \
         imagemagick \
+        ghostscript \
         inotify-tools \
         locales \
         nodejs \
@@ -41,9 +42,6 @@ RUN apt-get clean && \
 # set the locale
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
     locale-gen
-
-# Fix imagemagick policy
-RUN sed -i.bak '/<policy domain="coder" rights="none" pattern="PDF" \/>/s|^|<!-- |; s|$| -->|' /etc/ImageMagick-6/policy.xml
 
 
 ENV EXECJS_RUNTIME=Node \
@@ -69,6 +67,9 @@ RUN bundle install --no-cache
 EXPOSE 8080
 
 COPY bin/entry_point.sh /tmp/entry_point.sh
+
+# Fix imagemagick policy
+RUN sed -i.bak '/<policy domain="coder" rights="none" pattern="PDF" \/>/d' /etc/ImageMagick-6/policy.xml
 
 # uncomment this if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)

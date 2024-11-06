@@ -19,13 +19,9 @@ $green-color-dark: #009f06 !default;
 $green-color-light: #ddffdd !default;
 $green-color-bright: #11d68b !default;
 $purple-color: #b509ac !default;
-<<<<<<< HEAD
-$light-purple-color: lighten($purple-color, 25%);
 $orange-color: #ffcf5e !default;
 $light-orange-color: lighten($orange-color, 25%);
-=======
 $light-purple-color: color.adjust($purple-color, $lightness: 25%);
->>>>>>> upstream/main
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
