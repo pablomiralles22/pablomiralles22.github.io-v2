@@ -19,6 +19,7 @@ I am a PhD Candidate at Technical University of Madrid. I previously studied the
 Machine Learning and Big Data MSc at the same university, and the joint BSc
 program in Mathematics and Computer Science at University of Murcia.
 
-My main research interest lies in understanding Deep Learning, and in particular
-its applications to NLP, generative modeling and reinforcement learning. I am
-currently working on efficient Transformers and detecting AI-generated text.
+My main research interest lies in understanding Deep Learning models, and using
+that knowledge to improve them for specific data structures and tasks. I have
+worked on efficient Transformers, detecting AI-generated text and authorship
+attribution.
