@@ -368,28 +368,17 @@
     
 
     <div class="clearfix">
-<p><strong>Hi!</strong>
-I am a PhD Candidate at Technical University of Madrid. I previously studied the
-Machine Learning and Big Data MSc at the same university, and the joint BSc
-program in Mathematics and Computer Science at University of Murcia.</p>
+<p><strong>Hi, I’m Pablo! A PhD Student in AI at the Technical University of Madrid.</strong>
+I’m currently pursuing my PhD under the supervision of <a href="https://scholar.google.es/citations?user=b3J9VRsAAAAJ&amp;hl=en" rel="external nofollow noopener" target="_blank">Alejandro Martín</a> and <a href="https://scholar.google.es/citations?user=5XOhXooAAAAJ&amp;hl=es" rel="external nofollow noopener" target="_blank">Javier Huertas-Tato</a>, with a focus on understanding and improving deep learning models. My research spans efficient Transformer architectures, AI-generated text detection, and authorship attribution, with a broader goal of tailoring models to the structure and demands of specific tasks.</p>
 
-<p>My main research interest lies in understanding Deep Learning models, and using
-that knowledge to improve them for specific data structures and tasks. I have
-worked on efficient Transformers, detecting AI-generated text and authorship
-attribution.</p>
+<p>Previously, I completed an MSc in Machine Learning and Big Data at the Technical University of Madrid and a dual BSc in Mathematics and Computer Science at the University of Murcia.</p>
+
+<p>I mainly work with PyTorch, HuggingFace, and vLLM, and I enjoy tackling any hard problems related to Deep Learning and NLP. I particularly love diving into the intuition and mathematics of models, understanding the data distribution and the demands of the task, and using that insight to design more efficient, robust, and interpretable architectures tailored to real-world challenges.</p>
+
+<p>Feel free to check out my preprints, occasional posts, or get in touch if you’re interested in collaboration, research, or just a good chat about AI!</p>
 </div>
 
     <!-- News -->
-    
-      <h2>
-        <a href="/news/" style="color: inherit">news</a>
-      </h2>
-      <div class="news">
-  
-    <p>No news so far...</p>
-  
-</div>
-
     
 
     <!-- Latest posts -->
@@ -431,6 +420,405 @@ attribution.</p>
     
 
     <!-- Selected papers -->
+    
+      <h2>
+        <a href="/publications/" style="color: inherit">selected publications</a>
+      </h2>
+      <div class="publications">
+  <ol class="bibliography">
+<li>
+<div class="row">
+  
+    <div class="col col-sm-2 abbr">
+      
+        
+          
+          
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+      <source class="responsive-img-srcset" srcset="/assets/img/publication_preview/nli_grpo-480.webp 480w,/assets/img/publication_preview/nli_grpo-800.webp 800w,/assets/img/publication_preview/nli_grpo-1400.webp 1400w," type="image/webp" sizes="200px">
+    
+    <img src="/assets/img/publication_preview/nli_grpo.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="nli_grpo.png" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </source></picture>
+
+  
+</figure>
+
+        
+      
+    </div>
+  
+
+  <!-- Entry bib key -->
+  <div id="miralles-gonzalez2025Pushingboundary" class="col-sm-8">
+    <!-- Title -->
+    <div class="title">Pushing the Boundary on Natural Language Inference</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      
+      <em>Pablo
+            Miralles-González</em>, Javier
+            Huertas-Tato, Alejandro
+            Martín, and
+        <span class="more-authors" title="click to view 1 more author" onclick="
+              var element = $(this);
+              element.attr('title', '');
+              var more_authors_text = element.text() == '1 more author' ? 'David Camacho' : '1 more author';
+              var cursorPosition = 0;
+              var textAdder = setInterval(function(){
+                element.html(more_authors_text.substring(0, cursorPosition + 1));
+                if (++cursorPosition == more_authors_text.length){
+                  clearInterval(textAdder);
+                }
+            }, '10');
+          ">1 more author</span>
+      
+      
+    </div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="periodical">
+      May 2025
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      
+      
+        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      
+      
+        <a href="https://doi.org/10.48550/arXiv.2504.18376" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+      
+      
+
+      
+      
+
+      
+      
+
+      
+      
+      
+    
+
+    
+
+    
+      <!-- Hidden abstract block -->
+      <div class="abstract hidden">
+        <p>Natural Language Inference (NLI) is a central task in natural language understanding with applications in fact-checking, question answering, and information retrieval. Despite its importance, current NLI systems heavily rely on supervised learning with datasets that often contain annotation artifacts and biases, limiting generalization and real-world applicability. In this work, we apply a reinforcement learning-based approach using Group Relative Policy Optimization (GRPO) for Chain-of-Thought (CoT) learning in NLI, eliminating the need for labeled rationales and enabling this type of training on more challenging datasets such as ANLI. We fine-tune 7B, 14B, and 32B language models using parameter-efficient techniques (LoRA and QLoRA), demonstrating strong performance across standard and adversarial NLI benchmarks. Our 32B AWQ-quantized model surpasses state-of-the-art results on 7 out of 11 adversarial sets{}unicode{x2013}\or on all of them considering our replication{}unicode{x2013}\within a 22GB memory footprint, showing that robust reasoning can be retained under aggressive quantization. This work provides a scalable and practical framework for building robust NLI systems without sacrificing inference quality.</p>
+      </div>
+    
+
+    
+
+    
+  </div>
+</div>
+</li>
+<li>
+<div class="row">
+  
+    <div class="col col-sm-2 abbr">
+      
+        
+          
+          
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+      <source class="responsive-img-srcset" srcset="/assets/img/publication_preview/pawn-480.webp 480w,/assets/img/publication_preview/pawn-800.webp 800w,/assets/img/publication_preview/pawn-1400.webp 1400w," type="image/webp" sizes="200px">
+    
+    <img src="/assets/img/publication_preview/pawn.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="pawn.png" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </source></picture>
+
+  
+</figure>
+
+        
+      
+    </div>
+  
+
+  <!-- Entry bib key -->
+  <div id="miralles-gonzalez2025Notall" class="col-sm-8">
+    <!-- Title -->
+    <div class="title">Not All Tokens Are Created Equal: Perplexity Attention Weighted Networks for AI Generated Text Detection</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      
+      <em>Pablo
+            Miralles-González</em>, Javier
+            Huertas-Tato, Alejandro
+            Martín, and
+        <span class="more-authors" title="click to view 1 more author" onclick="
+              var element = $(this);
+              element.attr('title', '');
+              var more_authors_text = element.text() == '1 more author' ? 'David Camacho' : '1 more author';
+              var cursorPosition = 0;
+              var textAdder = setInterval(function(){
+                element.html(more_authors_text.substring(0, cursorPosition + 1));
+                if (++cursorPosition == more_authors_text.length){
+                  clearInterval(textAdder);
+                }
+            }, '10');
+          ">1 more author</span>
+      
+      
+    </div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="periodical">
+      Jan 2025
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      
+      
+        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      
+      
+        <a href="https://doi.org/10.48550/arXiv.2501.03940" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+      
+      
+
+      
+      
+
+      
+      
+
+      
+      
+      
+    
+
+    
+
+    
+      <!-- Hidden abstract block -->
+      <div class="abstract hidden">
+        <p>The rapid advancement in large language models (LLMs) has significantly enhanced their ability to generate coherent and contextually relevant text, raising concerns about the misuse of AI-generated content and making it critical to detect it. However, the task remains challenging, particularly in unseen domains or with unfamiliar LLMs. Leveraging LLM next-token distribution outputs offers a theoretically appealing approach for detection, as they encapsulate insights from the models’ extensive pre-training on diverse corpora. Despite its promise, zero-shot methods that attempt to operationalize these outputs have met with limited success. We hypothesize that one of the problems is that they use the mean to aggregate next-token distribution metrics across tokens, when some tokens are naturally easier or harder to predict and should be weighted differently. Based on this idea, we propose the Perplexity Attention Weighted Network (PAWN), which uses the last hidden states of the LLM and positions to weight the sum of a series of features based on metrics from the next-token distribution across the sequence length. Although not zero-shot, our method allows us to cache the last hidden states and next-token distribution metrics on disk, greatly reducing the training resource requirements. PAWN shows competitive and even better performance in-distribution than the strongest baselines (fine-tuned LMs) with a fraction of their trainable parameters. Our model also generalizes better to unseen domains and source models, with smaller variability in the decision boundary across distribution shifts. It is also more robust to adversarial attacks, and if the backbone has multilingual capabilities, it presents decent generalization to languages not seen during supervised training, with LLaMA3-1B reaching a mean macro-averaged F1 score of 81.46% in cross-validation with nine languages.</p>
+      </div>
+    
+
+    
+
+    
+  </div>
+</div>
+</li>
+<li>
+<div class="row">
+  
+    <div class="col col-sm-2 abbr">
+      
+        
+          
+          
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+      <source class="responsive-img-srcset" srcset="/assets/img/publication_preview/lra-480.webp 480w,/assets/img/publication_preview/lra-800.webp 800w,/assets/img/publication_preview/lra-1400.webp 1400w," type="image/webp" sizes="200px">
+    
+    <img src="/assets/img/publication_preview/lra.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="lra.png" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </source></picture>
+
+  
+</figure>
+
+        
+      
+    </div>
+  
+
+  <!-- Entry bib key -->
+  <div id="miralles-gonzalez2025localitybias" class="col-sm-8">
+    <!-- Title -->
+    <div class="title">On the Locality Bias and Results in the Long Range Arena</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      
+      <em>Pablo
+            Miralles-González</em>, Javier
+            Huertas-Tato, Alejandro
+            Martín, and
+        <span class="more-authors" title="click to view 1 more author" onclick="
+              var element = $(this);
+              element.attr('title', '');
+              var more_authors_text = element.text() == '1 more author' ? 'David Camacho' : '1 more author';
+              var cursorPosition = 0;
+              var textAdder = setInterval(function(){
+                element.html(more_authors_text.substring(0, cursorPosition + 1));
+                if (++cursorPosition == more_authors_text.length){
+                  clearInterval(textAdder);
+                }
+            }, '10');
+          ">1 more author</span>
+      
+      
+    </div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="periodical">
+      Jan 2025
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      
+      
+        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      
+      
+        <a href="https://doi.org/10.48550/arXiv.2501.14850" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+      
+      
+
+      
+      
+
+      
+      
+
+      
+      
+      
+    
+
+    
+
+    
+      <!-- Hidden abstract block -->
+      <div class="abstract hidden">
+        <p>The Long Range Arena (LRA) benchmark was designed to evaluate the performance of Transformer improvements and alternatives in long-range dependency modeling tasks. The Transformer and its main variants performed poorly on this benchmark, and a new series of architectures such as State Space Models (SSMs) gained some traction, greatly outperforming Transformers in the LRA. Recent work has shown that with a denoising pre-training phase, Transformers can achieve competitive results in the LRA with these new architectures. In this work, we discuss and explain the superiority of architectures such as MEGA and SSMs in the Long Range Arena, as well as the recent improvement in the results of Transformers, pointing to the positional and local nature of the tasks. We show that while the LRA is a benchmark for long-range dependency modeling, in reality most of the performance comes from short-range dependencies. Using training techniques to mitigate data inefficiency, Transformers are able to reach state-of-the-art performance with proper positional encoding. In addition, with the same techniques, we were able to remove all restrictions from SSM convolutional kernels and learn fully parameterized convolutions without decreasing performance, suggesting that the design choices behind SSMs simply added inductive biases and learning efficiency for these particular tasks. Our insights indicate that LRA results should be interpreted with caution and call for a redesign of the benchmark.</p>
+      </div>
+    
+
+    
+
+    
+  </div>
+</div>
+</li>
+</ol>
+</div>
+
     
 
     <!-- Social -->
