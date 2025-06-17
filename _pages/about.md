@@ -9,17 +9,17 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
 
-news: true  # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
+news: false  # includes a list of news items
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-**Hi!**
-I am a PhD Candidate at Technical University of Madrid. I previously studied the
-Machine Learning and Big Data MSc at the same university, and the joint BSc
-program in Mathematics and Computer Science at University of Murcia.
 
-My main research interest lies in understanding Deep Learning models, and using
-that knowledge to improve them for specific data structures and tasks. I have
-worked on efficient Transformers, detecting AI-generated text and authorship
-attribution.
+**Hi, I'm Pablo! A PhD Student in AI at the Technical University of Madrid.**
+I'm currently pursuing my PhD under the supervision of [Alejandro Martín](https://scholar.google.es/citations?user=b3J9VRsAAAAJ&hl=en) and [Javier Huertas-Tato](https://scholar.google.es/citations?user=5XOhXooAAAAJ&hl=es), with a focus on understanding and improving deep learning models. My research spans efficient Transformer architectures, AI-generated text detection, and authorship attribution, with a broader goal of tailoring models to the structure and demands of specific tasks.
+
+Previously, I completed an MSc in Machine Learning and Big Data at the Technical University of Madrid and a dual BSc in Mathematics and Computer Science at the University of Murcia.
+
+I mainly work with PyTorch, HuggingFace, and vLLM, and I enjoy tackling any hard problems related to Deep Learning and NLP. I particularly love diving into the intuition and mathematics of models, understanding the data distribution and the demands of the task, and using that insight to design more efficient, robust, and interpretable architectures tailored to real-world challenges.
+
+Feel free to check out my preprints, occasional posts, or get in touch if you're interested in collaboration, research, or just a good chat about AI!
