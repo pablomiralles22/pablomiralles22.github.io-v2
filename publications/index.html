@@ -22,7 +22,7 @@
   
 </title>
 <meta name="author" content="Pablo Miralles">
-<meta name="description" content="all publications in journals, conferences and public repositories">
+<meta name="description" content="all publications in journals, conferences and preprint servers">
 
   <meta name="keywords" content="mathematics, computer science, deep learning, NLP, data science, Pablo, Miralles, competitive programming, learning, studying, productivity">
 
@@ -36,7 +36,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Pablo Miralles | publications">
   <meta property="og:url" content="http://0.0.0.0:8080/publications/">
-  <meta property="og:description" content="all publications in journals, conferences and public repositories">
+  <meta property="og:description" content="all publications in journals, conferences and preprint servers">
   
     <meta property="og:image" content="prof_pic.jpg">
   
@@ -45,7 +45,7 @@
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="publications">
-  <meta name="twitter:description" content="all publications in journals, conferences and public repositories">
+  <meta name="twitter:description" content="all publications in journals, conferences and preprint servers">
   
     <meta name="twitter:image" content="prof_pic.jpg">
   
@@ -104,7 +104,7 @@
         },
         "url": "http://0.0.0.0:8080/publications/",
         "@type": "WebSite",
-        "description": "all publications in journals, conferences and public repositories",
+        "description": "all publications in journals, conferences and preprint servers",
         "headline": "publications",
         
         "sameAs": ["https://orcid.org/0000-0002-1230-9035", "https://scholar.google.com/citations?user=l538kF8AAAAJ", "https://github.com/pablomiralles22", "https://www.linkedin.com/in/pablo-miralles-gonzalez", "https://twitter.com/p_miralles_"],
@@ -337,7 +337,7 @@
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">publications</h1>
-    <p class="post-description">all publications in journals, conferences and public repositories</p>
+    <p class="post-description">all publications in journals, conferences and preprint servers</p>
   </header>
 
   <article>
@@ -357,6 +357,160 @@
 <div class="row">
   
     <div class="col col-sm-2 abbr">
+      
+        
+          
+          
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+      <source class="responsive-img-srcset" srcset="/assets/img/publication_preview/nli_grpo-480.webp 480w,/assets/img/publication_preview/nli_grpo-800.webp 800w,/assets/img/publication_preview/nli_grpo-1400.webp 1400w," type="image/webp" sizes="200px"></source>
+    
+    <img src="/assets/img/publication_preview/nli_grpo.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="nli_grpo.png" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+        
+      
+    </div>
+  
+
+  <!-- Entry bib key -->
+  <div id="miralles-gonzalez2025Pushingboundary" class="col-sm-8">
+    <!-- Title -->
+    <div class="title">Pushing the Boundary on Natural Language Inference</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      
+      <em>Pablo
+            Miralles-González</em>, Javier
+            Huertas-Tato, Alejandro
+            Martín, and
+        <span class="more-authors" title="click to view 1 more author" onclick="
+              var element = $(this);
+              element.attr('title', '');
+              var more_authors_text = element.text() == '1 more author' ? 'David Camacho' : '1 more author';
+              var cursorPosition = 0;
+              var textAdder = setInterval(function(){
+                element.html(more_authors_text.substring(0, cursorPosition + 1));
+                if (++cursorPosition == more_authors_text.length){
+                  clearInterval(textAdder);
+                }
+            }, '10');
+          ">1 more author</span>
+      
+      
+    </div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="periodical">
+      May 2025
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      
+      
+        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      
+      
+        <a href="https://doi.org/10.48550/arXiv.2504.18376" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+      
+      
+
+      
+      
+
+      
+      
+
+      
+      
+      
+    
+
+    
+
+    
+      <!-- Hidden abstract block -->
+      <div class="abstract hidden">
+        <p>Natural Language Inference (NLI) is a central task in natural language understanding with applications in fact-checking, question answering, and information retrieval. Despite its importance, current NLI systems heavily rely on supervised learning with datasets that often contain annotation artifacts and biases, limiting generalization and real-world applicability. In this work, we apply a reinforcement learning-based approach using Group Relative Policy Optimization (GRPO) for Chain-of-Thought (CoT) learning in NLI, eliminating the need for labeled rationales and enabling this type of training on more challenging datasets such as ANLI. We fine-tune 7B, 14B, and 32B language models using parameter-efficient techniques (LoRA and QLoRA), demonstrating strong performance across standard and adversarial NLI benchmarks. Our 32B AWQ-quantized model surpasses state-of-the-art results on 7 out of 11 adversarial sets{}unicode{x2013}\or on all of them considering our replication{}unicode{x2013}\within a 22GB memory footprint, showing that robust reasoning can be retained under aggressive quantization. This work provides a scalable and practical framework for building robust NLI systems without sacrificing inference quality.</p>
+      </div>
+    
+
+    
+
+    
+  </div>
+</div>
+</li>
+<li>
+<div class="row">
+  
+    <div class="col col-sm-2 abbr">
+      
+        
+          
+          
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+      <source class="responsive-img-srcset" srcset="/assets/img/publication_preview/pawn-480.webp 480w,/assets/img/publication_preview/pawn-800.webp 800w,/assets/img/publication_preview/pawn-1400.webp 1400w," type="image/webp" sizes="200px"></source>
+    
+    <img src="/assets/img/publication_preview/pawn.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="pawn.png" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+        
       
     </div>
   
@@ -463,6 +617,30 @@
 <div class="row">
   
     <div class="col col-sm-2 abbr">
+      
+        
+          
+          
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+      <source class="responsive-img-srcset" srcset="/assets/img/publication_preview/lra-480.webp 480w,/assets/img/publication_preview/lra-800.webp 800w,/assets/img/publication_preview/lra-1400.webp 1400w," type="image/webp" sizes="200px"></source>
+    
+    <img src="/assets/img/publication_preview/lra.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="lra.png" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+        
       
     </div>
   
@@ -812,7 +990,7 @@
               },
             },{id: "nav-publications",
               title: "publications",
-              description: "all publications in journals, conferences and public repositories",
+              description: "all publications in journals, conferences and preprint servers",
               section: "Navigation",
               handler: () => {
                 window.location.href = "/publications/";
@@ -833,7 +1011,7 @@
               },
             },{id: "nav-teaching",
               title: "teaching",
-              description: "In this page I will upload the material I use to teach my courses, as soon as they are ready.",
+              description: "In this page I include the different courses I have taught. If possible, I try upload the material I use.",
               section: "Navigation",
               handler: () => {
                 window.location.href = "/teaching/";
