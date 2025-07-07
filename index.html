@@ -589,9 +589,9 @@ I’m currently pursuing my PhD under the supervision of <a href="https://schola
   
 
   <!-- Entry bib key -->
-  <div id="miralles-gonzalez2025Notall" class="col-sm-8">
+  <div id="miralles-gonzalez2025Notalla" class="col-sm-8">
     <!-- Title -->
-    <div class="title">Not All Tokens Are Created Equal: Perplexity Attention Weighted Networks for AI Generated Text Detection</div>
+    <div class="title">Not All Tokens Are Created Equal: Perplexity Attention Weighted Networks for AI-Generated Text Detection</div>
     <!-- Author -->
     <div class="author">
       
@@ -629,7 +629,7 @@ I’m currently pursuing my PhD under the supervision of <a href="https://schola
     
     
     <div class="periodical">
-      Jan 2025
+      <em>Information Fusion</em>,  Jul 2025
     </div>
     <div class="periodical">
       
@@ -642,7 +642,7 @@ I’m currently pursuing my PhD under the supervision of <a href="https://schola
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
       
       
-        <a href="https://doi.org/10.48550/arXiv.2501.03940" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a>
+        <a href="https://doi.org/10.1016/j.inffus.2025.103465" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a>
       
       
       
@@ -676,7 +676,7 @@ I’m currently pursuing my PhD under the supervision of <a href="https://schola
     
       <!-- Hidden abstract block -->
       <div class="abstract hidden">
-        <p>The rapid advancement in large language models (LLMs) has significantly enhanced their ability to generate coherent and contextually relevant text, raising concerns about the misuse of AI-generated content and making it critical to detect it. However, the task remains challenging, particularly in unseen domains or with unfamiliar LLMs. Leveraging LLM next-token distribution outputs offers a theoretically appealing approach for detection, as they encapsulate insights from the models’ extensive pre-training on diverse corpora. Despite its promise, zero-shot methods that attempt to operationalize these outputs have met with limited success. We hypothesize that one of the problems is that they use the mean to aggregate next-token distribution metrics across tokens, when some tokens are naturally easier or harder to predict and should be weighted differently. Based on this idea, we propose the Perplexity Attention Weighted Network (PAWN), which uses the last hidden states of the LLM and positions to weight the sum of a series of features based on metrics from the next-token distribution across the sequence length. Although not zero-shot, our method allows us to cache the last hidden states and next-token distribution metrics on disk, greatly reducing the training resource requirements. PAWN shows competitive and even better performance in-distribution than the strongest baselines (fine-tuned LMs) with a fraction of their trainable parameters. Our model also generalizes better to unseen domains and source models, with smaller variability in the decision boundary across distribution shifts. It is also more robust to adversarial attacks, and if the backbone has multilingual capabilities, it presents decent generalization to languages not seen during supervised training, with LLaMA3-1B reaching a mean macro-averaged F1 score of 81.46% in cross-validation with nine languages.</p>
+        <p>The rapid advancement in large language models (LLMs) has enhanced their ability to generate coherent text, raising concerns about misuse and making detection critical. However, this task remains challenging, particularly in unseen domains or with unfamiliar LLMs. Leveraging next-token distribution outputs offers a theoretically appealing detection approach, as they reflect the models’ extensive pre-training. Despite this promise, zero-shot methods using these outputs have had limited success. We hypothesize this is partly due to using the mean to aggregate next-token metrics across tokens, ignoring that some tokens are inherently easier or harder to predict. We propose the Perplexity Attention Weighted Network (PAWN), which uses last hidden states and positions to weight features derived from next-token distribution metrics across the sequence. Though not zero-shot, our method allows caching hidden states and metrics to reduce training resource needs. PAWN performs competitively or better in-distribution than the strongest baselines (fine-tuned LMs) using a fraction of their trainable parameters. It also generalizes better to unseen domains and source models, with less variability in the decision boundary under distribution shifts. PAWN is more robust to adversarial attacks and, with a multilingual backbone, generalizes well to languages unseen in supervised training, with LLaMA3-1B reaching a mean macro F1 score of 81.46% in cross-validation across nine languages.</p>
       </div>
     
 
