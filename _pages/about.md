@@ -14,12 +14,11 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
+**Hi, I'm Pablo!**
+I’m a PhD student in Artificial Intelligence supervised by [Alejandro Martín](https://scholar.google.es/citations?user=b3J9VRsAAAAJ&hl=en) and [Javier Huertas-Tato](https://scholar.google.es/citations?user=5XOhXooAAAAJ&hl=es). My research focuses on applying deep learning to natural language processing (NLP), with work spanning AI-generated text detection, authorship attribution, natural language inference (NLI), and efficient Transformer architectures.
 
-**Hi, I'm Pablo! A PhD Student in AI at the Technical University of Madrid.**
-I'm currently pursuing my PhD under the supervision of [Alejandro Martín](https://scholar.google.es/citations?user=b3J9VRsAAAAJ&hl=en) and [Javier Huertas-Tato](https://scholar.google.es/citations?user=5XOhXooAAAAJ&hl=es), with a focus on understanding and improving deep learning models. My research spans efficient Transformer architectures, AI-generated text detection, and authorship attribution, with a broader goal of tailoring models to the structure and demands of specific tasks.
+Currently, I’m interested in how large language models (LLMs) can be adapted to downstream tasks in a way that *generalizes robustly*, especially when data are scarce or affected by spurious correlations. I primarily work with `PyTorch`, `HuggingFace`, and `vLLM`. I’m driven by understanding the mathematical and intuitive foundations of models, the structure of the data, and the demands of the pre-training and downstream tasks, using that insight to design methods that are more efficient, robust, and interpretable in real-world settings.
 
-Previously, I completed an MSc in Machine Learning and Big Data at the Technical University of Madrid and a dual BSc in Mathematics and Computer Science at the University of Murcia.
+Before my PhD, I completed an MSc in Machine Learning and Big Data at the Technical University of Madrid, and a double BSc in Mathematics and Computer Science at the University of Murcia.
 
-I mainly work with PyTorch, HuggingFace, and vLLM, and I enjoy tackling any hard problems related to Deep Learning and NLP. I particularly love diving into the intuition and mathematics of models, understanding the data distribution and the demands of the task, and using that insight to design more efficient, robust, and interpretable architectures tailored to real-world challenges.
-
-Feel free to check out my preprints, occasional posts, or get in touch if you're interested in collaboration, research, or just a good chat about AI!
+Feel free to check out my publications, occasional posts, or reach out if you’re interested in collaborating.
