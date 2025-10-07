@@ -469,20 +469,24 @@ footer.sticky-bottom {
 
 // CV
 
-.cv {
-  margin-bottom: 40px;
+.main-cv {
+  max-width: 1080px !important;
 
-  .card {
-    background-color: var(--global-card-bg-color);
-    border: 1px solid var(--global-divider-color);
+  .cv {
+    margin-bottom: 40px;
 
-    .list-group-item {
-      background-color: inherit;
-      border-color: var(--global-divider-color);
+    .card {
+      background-color: var(--global-card-bg-color);
+      border: 1px solid var(--global-divider-color);
 
-      .badge {
-        color: var(--global-card-bg-color) !important;
-        background-color: var(--global-theme-color) !important;
+      .list-group-item {
+        background-color: inherit;
+        border-color: var(--global-divider-color);
+
+        .badge {
+          color: var(--global-card-bg-color) !important;
+          background-color: var(--global-theme-color) !important;
+        }
       }
     }
   }
@@ -654,6 +658,54 @@ footer.sticky-bottom {
   }
 }
 
+.teaching {
+  // header {
+  //   border-bottom: 1px solid #e6e6e6;
+  //   padding-bottom: 12px;
+  //   margin-bottom: 20px;
+  // }
+
+  // h1 {
+  //   margin: 0;
+  //   font-size: 1.6rem;
+  // }
+
+  .entry {
+    margin: 18px 0;
+    padding: 14px;
+    border-left: 4px solid var(--global-theme-color);
+    background: #fbfcfd;
+    border-radius: 6px;
+  }
+
+  .meta {
+    font-weight: 600;
+  }
+
+  .role {
+    color: #333;
+    margin-top: 6px;
+  }
+
+  ul {
+    margin: 8px 0 0 20px;
+  }
+
+  .previous {
+    opacity: 0.95;
+    margin-top: 12px;
+  }
+
+  h2.category {
+    color: var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-top: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+}
+
 // Publications
 
 .publications {
@@ -690,9 +742,6 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 1rem;
-
-      .preview {
-      }
 
       .abbr {
         margin-bottom: 0.5rem;
